@@ -4,7 +4,7 @@ const Membership = () => {
   const plans = [
     {
       name: "Bronze",
-      price: "50",
+      price: "4000",
       color: "from-[#CD7F32]/20 to-[#CD7F32]/5",
       borderColor: "border-[#CD7F32]/30",
       hoverBorder: "hover:border-[#CD7F32]",
@@ -20,7 +20,7 @@ const Membership = () => {
     },
     {
       name: "Silver",
-      price: "100",
+      price: "8000",
       color: "from-gray-400/20 to-gray-400/5",
       borderColor: "border-gray-400/30",
       hoverBorder: "hover:border-gray-400",
@@ -36,7 +36,7 @@ const Membership = () => {
     },
     {
       name: "Gold",
-      price: "150",
+      price: "12000",
       color: "from-orange-400/20 to-orange-400/5",
       borderColor: "border-orange-400/50",
       hoverBorder: "hover:border-orange-400",
@@ -102,7 +102,7 @@ const Membership = () => {
                   {plan.name}
                 </h2>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-4xl md:text-5xl font-black text-white">${plan.price}</span>
+                  <span className="text-4xl md:text-5xl font-black text-white">₹{plan.price}</span>
                   <span className="text-gray-500 font-bold">/month</span>
                 </div>
               </div>

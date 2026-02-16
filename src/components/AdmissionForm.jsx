@@ -12,7 +12,7 @@ export default function AdmissionForm() {
   const [phone, setPhone] = useState("");
   const [membershipType, setMembershipType] = useState("Bronze");
   const [admissionDate, setAdmissionDate] = useState(new Date().toISOString().split('T')[0]);
-  const [feeAmount, setFeeAmount] = useState("50");
+  const [feeAmount, setFeeAmount] = useState("4000"); // Updated default
   const [feeStatus, setFeeStatus] = useState("Not Completed");
 
   const handleMembershipChange = (e) => {
@@ -20,11 +20,11 @@ export default function AdmissionForm() {
     setMembershipType(type);
 
     if (type === "Bronze") {
-      setFeeAmount("50");
+      setFeeAmount("4000");
     } else if (type === "Silver") {
-      setFeeAmount("100");
+      setFeeAmount("8000");
     } else if (type === "Gold") {
-      setFeeAmount("150");
+      setFeeAmount("12000");
     }
   };
 
@@ -61,7 +61,7 @@ export default function AdmissionForm() {
     setPhone("");
     setMembershipType("Bronze");
     setAdmissionDate(new Date().toISOString().split('T')[0]);
-    setFeeAmount("50");
+    setFeeAmount("4000"); // Updated default reset
     setFeeStatus("Not Completed");
 
     setTimeout(() => {
@@ -163,9 +163,9 @@ export default function AdmissionForm() {
                              focus:outline-none focus:ring-2 focus:ring-orange-400/20 focus:border-orange-400
                              transition-all duration-300 appearance-none cursor-pointer"
                 >
-                  <option value="Bronze" className="bg-[#121212]">Bronze Edition - $50</option>
-                  <option value="Silver" className="bg-[#121212]">Silver Edition - $100</option>
-                  <option value="Gold" className="bg-[#121212]">Gold Elite - $150</option>
+                  <option value="Bronze" className="bg-[#121212]">Bronze Edition - ₹4000</option>
+                  <option value="Silver" className="bg-[#121212]">Silver Edition - ₹8000</option>
+                  <option value="Gold" className="bg-[#121212]">Gold Elite - ₹12000</option>
                 </select>
               </div>
 
@@ -190,10 +190,10 @@ export default function AdmissionForm() {
               {/* Fee Amount */}
               <div className="group">
                 <label className="flex items-center gap-2 text-sm font-bold text-orange-400 uppercase tracking-widest mb-3 ml-1">
-                  <CreditCard size={16} /> Fee Amount ($)
+                  <CreditCard size={16} /> Fee Amount (₹)
                 </label>
                 <div className="relative">
-                  <span className="absolute left-6 top-1/2 -translate-y-1/2 text-gray-400 font-bold">$</span>
+                  <span className="absolute left-6 top-1/2 -translate-y-1/2 text-gray-400 font-bold">₹</span>
                   <input
                     type="number"
                     value={feeAmount}

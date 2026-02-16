@@ -29,42 +29,44 @@ function AppContent() {
     return () => clearTimeout(timer);
   }, [location.pathname]);
 
-  if (loading) return <Loader />;
-
   const isAdminRoute = location.pathname.startsWith('/admin');
 
   return (
     <>
-      {!isAdminRoute && <Navbar />}
-      <ToastContainer />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/trainer" element={<Trainer />} />
-        <Route path="/membership" element={<Membership />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
+      <ToastContainer position="top-right" autoClose={3000} theme="dark" />
+      {loading ? (
+        <Loader />
+      ) : (
+        <>
+          {!isAdminRoute && <Navbar />}
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/trainer" element={<Trainer />} />
+            <Route path="/membership" element={<Membership />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
 
-
-
-        {/* Protected Admin Routes */}
-        <Route path="/admin" element={
-          <ProtectedRoute>
-            <AdminDashboard />
-          </ProtectedRoute>
-        } />
-        <Route path="/admin/admission" element={
-          <ProtectedRoute>
-            <AdmissionForm />
-          </ProtectedRoute>
-        } />
-        <Route path="/admin/fee-status" element={
-          <ProtectedRoute>
-            <FeeStatusChecker />
-          </ProtectedRoute>
-        } />
-      </Routes>
+            {/* Protected Admin Routes */}
+            <Route path="/admin" element={
+              <ProtectedRoute>
+                <AdminDashboard />
+              </ProtectedRoute>
+            } />
+            <Route path="/admin/admission" element={
+              <ProtectedRoute>
+                <AdmissionForm />
+              </ProtectedRoute>
+            } />
+            <Route path="/admin/fee-status" element={
+              <ProtectedRoute>
+                <FeeStatusChecker />
+              </ProtectedRoute>
+            } />
+          </Routes>
+        </>
+      )}
     </>
   );
 }

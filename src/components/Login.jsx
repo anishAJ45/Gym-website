@@ -32,7 +32,7 @@ export default function Login() {
           localStorage.setItem("isAdminLoggedIn", "false");
           Navigate("/");
         }
-        window.location.reload();
+        window.dispatchEvent(new Event("authChange"));
       } else {
         toast.error("Login failed");
       }
