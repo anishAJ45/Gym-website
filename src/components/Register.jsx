@@ -13,7 +13,7 @@ export default function Register() {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3000/auth/register", {
+      await axios.post("https://gym-website-backend-86fc.onrender.com/auth/register", {
         email,
         password,
         role,
