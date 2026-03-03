@@ -12,7 +12,7 @@ const TrainerSection = () => {
     },
     {
       name: "Alex",
-      image: "/assets/trainer2.jpg",
+      image: "/assets/Trainer2.jpg",
       description: "Alex is a professional fitness coach focused on strength training and body transformation. He designs customized workout routines that improve performance, endurance, and overall health.",
       specialty: "Body Transformation",
       experience: "8+ Years",
